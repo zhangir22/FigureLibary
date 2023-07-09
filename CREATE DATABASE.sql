@@ -1,0 +1,19 @@
+CREATE DATABASE ProductTest
+GO
+USE ProductTest;
+GO
+CREATE TABLE products
+(
+id INT PRIMARY KEY IDENTITY NOT NULL,
+name NVARCHAR(MAX) NOT NULL,
+category_id INT 
+);
+GO
+CREATE TABLE category
+(
+id INT PRIMARY KEY IDENTITY NOT NULL,
+name NVARCHAR(MAX) NOT NULL
+);
+GO
+ALTER TABLE products
+ADD FOREIGN KEY (category_id) REFERENCES category(id);
